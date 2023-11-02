@@ -1,0 +1,14 @@
+name: Application Code Deploy
+on:
+  push:
+    branches:
+      - main
+
+# Permission can be added at job level or workflow level
+permissions:
+  contents: write # This is required for creating release.
+
+jobs:
+  workflow-call:
+    uses: webedx-spark/shared-data-libraries/.github/workflows/data-application-code-deploy.yaml@main
+    secrets: inherit
